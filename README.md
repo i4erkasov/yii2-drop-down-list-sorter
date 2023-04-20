@@ -1,6 +1,12 @@
 DropDownList Sorter for Yii2
 ============================
-DropDownList Sorter for Yii2
+
+[![Latest Stable Version](https://poser.pugx.org/i4erkasov/yii2-drop-down-list-sorter/v/stable)](https://packagist.org/packages/i4erkasov/yii2-drop-down-list-sorter)
+[![Total Downloads](https://poser.pugx.org/i4erkasov/yii2-drop-down-list-sorter/downloads)](https://packagist.org/packages/i4erkasov/yii2-drop-down-list-sorter)
+[![License](https://poser.pugx.org/i4erkasov/yii2-drop-down-list-sorter/license)](https://packagist.org/packages/i4erkasov/yii2-drop-down-list-sorter)
+
+Yii2 widget to sort ActiveDataProvider data using a drop-down list.
+
 
 Installation
 ------------
