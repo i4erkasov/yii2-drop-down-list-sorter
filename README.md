@@ -13,13 +13,13 @@ Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Either run
+Run the following command
 
 ```
 php composer.phar require --prefer-dist i4erkasov/yii2-drop-down-list-sorter "*"
 ```
 
-or add
+or add the following to the require section of your composer.json file:
 
 ```
 "i4erkasov/yii2-drop-down-list-sorter": "*"
