@@ -33,7 +33,7 @@ Usage
 
 Once the extension is installed, simply use it in your code by  :
 
-Добавляем в наш ActiveDataProvider в sort:
+Add to our ActiveDataProvider in sort::
 ```php
 $dataProvider = new yii\data\ActiveDataProvider([
             'query'      => $query,
@@ -72,26 +72,20 @@ $dataProvider = new yii\data\ActiveDataProvider([
         ]);
 ```
 
-Набор параметров такой же как для стандартного Yii2 Sort 
+The set of parameters is the same as for standard [Yii2 Sort](https://www.yiiframework.com/doc/api/2.0/yii-data-sort)
 
-За исключением: 
+For exclusively:
 
-Параметр  defaultOrder является обязательным
+The defaultOrder parameter is required
+And
+Added the unsetParams parameter for exclude GET parameters, as shown above when generating the sort URL.
 
-и
-
-Добавлен параметр unsetParams для исключения нежелательных GET параметров 
-как показано выше 
-при формирования сортировочного URL
-
-Пример:
+Example:
 ```php
 'unsetParams'  => ['page', '_pjax'],
 ```
 
-В вашем представлении предсталении (view) виджит
-
-Пример php: 
+php example:
 ```php
 echo \i4erkasov\dropdownlistsorter\widget\DropDownSorter::widget([
     'sort'       => $dataProvider->sort,
@@ -105,26 +99,35 @@ echo \i4erkasov\dropdownlistsorter\widget\DropDownSorter::widget([
 ]);
 ```
 
-Пример с использованием шаблонизатора yii2-twig
+yii2-twig example:
 ```php
 {{ use('i4erkasov/dropdownlistsorter/widget/DropDownSorter') }}
 {{ use('yii/widgets/Pjax') }}
+
 {{ dropDownSorter_widget({
-                        'sort': dataProvider.sort,
-                        'options': {
-                            'class': 'filter-select__select',
-                            'onchange': '$.pjax.reload({container: "#pjax-catalog", url: $(this).val()})',
-                        },
-                        'attributes': [
-                            'index',
-                            'name',
-                            'price'
-                        ]
-                    }) | raw }}
+    'sort': dataProvider.sort,
+    'options': {
+        'class': 'filter-select__select',
+        'onchange': '$.pjax.reload({container: "#pjax-catalog", url: $(this).val()})',
+    },
+    'attributes': [
+        'index',
+        'name',
+        'price'
+    ]
+}) | raw }}
+
 {{ pjax_end() }}
+
 ```
 
-Обратите внимание в вышеуказанных примерах обработка события на изменения (change) DropDownList реализована через pjax
+>**Note**
+Please note that in the above examples, the handling of the event for "change" DropDownList is implemented via pjax
 ```php
 'onchange': '$.pjax.reload({container: "#pjax-catalog", url: $(this).val()})',
 ```
+## License
+This package is released under the MIT License. See LICENSE.md for details.
+
+## Contributing
+You can contribute by submitting pull requests or creating new issues.
