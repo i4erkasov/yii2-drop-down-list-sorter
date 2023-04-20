@@ -25,8 +25,6 @@ or add the following to the require section of your composer.json file:
 "i4erkasov/yii2-drop-down-list-sorter": "*"
 ```
 
-to the require section of your `composer.json` file.
-
 
 Usage
 -----
